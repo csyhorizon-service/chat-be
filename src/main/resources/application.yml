@@ -1,0 +1,28 @@
+spring:
+  # 1. 기존 JDBC 설정 (MyBatis 등 블로킹 작업용)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/studydb
+    username: study
+    password: test
+    driver-class-name: org.postgresql.Driver
+
+  # 2. R2DBC 설정 (WebFlux + Reactive Repository용 - 필수!)
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/studydb
+    username: study
+    password: test
+
+  # 3. Redis 설정
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # 4. JPA/Hibernate 설정 (JDBC용)
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
