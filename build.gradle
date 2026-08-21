@@ -33,6 +33,7 @@ dependencies {
     // 롬복 및 도구
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    runtimeOnly 'org.postgresql:postgresql'
 }
 
 tasks.named('test') {
